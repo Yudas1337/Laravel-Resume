@@ -35,4 +35,8 @@ class AuthController extends Controller
             'error' => 'Username atau Password tidak cocok',
         ]);
     }
+
+    public function logout()
+    {
+    }
 }
