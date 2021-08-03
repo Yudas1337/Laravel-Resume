@@ -19,8 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => ['enablecors', 'verifytoken']], function () {
-    Route::prefix('sliders')->group(function () {
-        Route::get('homepage', [SliderController::class, 'getHomePageSliders']);
-        Route::get('comingsoon', [SliderController::class, 'getComingSoonSliders']);
-    });
+    Route::get('experiences', ['']);
 });
