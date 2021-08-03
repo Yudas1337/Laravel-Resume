@@ -25,7 +25,6 @@ class UserFactory extends Factory
     {
 
         return [
-            'id'    => Str::random(16) . Carbon::now()->format('YmdHis'),
             'name'  =>  "Yudas Malabi",
             'email' => "yudasmalabi@gmail.com",
             'email_verified_at' => now(),
