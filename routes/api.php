@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['middleware' => ['enablecors', 'verifytoken']], function () {
+    Route::prefix('sliders')->group(function () {
+        Route::get('homepage', [SliderController::class, 'getHomePageSliders']);
+        Route::get('comingsoon', [SliderController::class, 'getComingSoonSliders']);
+    });
+});
