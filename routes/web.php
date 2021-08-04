@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AuthController::class, 'index']);
 Route::post('/', [AuthController::class, 'authenticate'])->name('login');
 
-Route::group(['middleware', 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
 
     Route::prefix('admin')->group(function () {
         Route::get('/', [HomeController::class, 'index']);

@@ -15,6 +15,13 @@ class CreatePortfoliosTable extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->string('photo');
+            $table->enum('category', ['web', 'mobile', 'design']);
+            $table->boolean('isPrivate');
+            $table->string('technology');
+            $table->text('download')->nullable();
             $table->timestamps();
         });
     }
