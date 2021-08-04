@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CompetenciesController;
 use App\Http\Controllers\ConfigsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserDetailsController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
@@ -35,9 +36,8 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('/', [HomeController::class, 'password']);
             Route::post('/', [HomeController::class, 'update'])->name('updatePassword');
         });
-        Route::resource('configs', ConfigsController::class)->only([
-            'index', 'update'
-        ]);
+        Route::resource('configs', ConfigsController::class)->only(['index', 'update']);
+        Route::resource('profiles', UserDetailsController::class)->only(['index', 'update']);
         Route::resources([
             'competencies', CompetenciesController::class
         ]);

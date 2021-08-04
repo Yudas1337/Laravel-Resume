@@ -44,18 +44,10 @@ class ConfigsController extends Controller
             $filename = Str::random(16) . $filename;
             Storage::disk('google')->put($filename, $file);
             $listContents = Storage::disk('google')->listContents();
-            $id = $this->getId($listContents, 'name', $filename);
+            $id = getDrivePath($listContents, 'name', $filename);
             $config->photo = $id['path'];
         }
         $config->save();
         return redirect('admin/configs')->with('status', 'Berhasil Update Resume Configuration');
-    }
-
-    private function getId(array $array, $key, $value)
-    {
-        foreach ($array as $subarray) {
-            if (isset($subarray[$key]) && $subarray[$key] == $value)
-                return $subarray;
-        }
     }
 }
