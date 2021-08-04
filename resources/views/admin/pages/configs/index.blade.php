@@ -38,7 +38,7 @@
                 @endif
                 @if ($errors->any())
                     <div class="alert alert-danger">
-                        <strong>Gagal!</strong> Validasi Form Error<br><br>
+                        <strong>Failed!</strong> Form Validation Error<br><br>
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>

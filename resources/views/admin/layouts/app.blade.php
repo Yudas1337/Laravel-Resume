@@ -155,7 +155,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <small class="nav-subtitle" title="Menu Utama">Menu Utama</small>
+                                <small class="nav-subtitle" title="Main Menu">Main Menu</small>
                                 <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                             </li>
                             <li class="nav-item">

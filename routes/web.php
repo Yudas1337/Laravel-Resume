@@ -39,7 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('configs', ConfigsController::class)->only(['index', 'update']);
         Route::resource('profiles', UserDetailsController::class)->only(['index', 'update']);
         Route::resources([
-            'competencies', CompetenciesController::class
+            'competencies' => CompetenciesController::class,
+            ''
         ]);
     });
 });

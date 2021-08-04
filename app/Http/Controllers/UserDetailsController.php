@@ -52,6 +52,6 @@ class UserDetailsController extends Controller
             $profiles->photo = $id['path'];
         }
         $profiles->save();
-        return redirect('admin/profiles')->with('status', 'Berhasil Update Profiles');
+        return redirect('admin/profiles')->with('status', 'Update Profiles Successfuly');
     }
 }

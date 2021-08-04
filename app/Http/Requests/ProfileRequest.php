@@ -25,6 +25,7 @@ class ProfileRequest extends FormRequest
     {
         return [
             'name'      => 'required',
+            'photo'     => 'mimes:jpg,png,jpeg|image',
             'linkedin'  => 'required',
             'gmail'     => 'required',
             'telegram'  => 'required',
@@ -32,20 +33,6 @@ class ProfileRequest extends FormRequest
             'whatsapp'  => 'required',
             'instagram' => 'required',
             'facebook'  => 'required'
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'name.required'     => 'Nama tidak boleh kosong',
-            'linkedin.required' => 'Linkedin tidak boleh kosong',
-            'gmail.required'    => 'Gmail tidak boleh kosong',
-            'telegram.required' => 'Telegram tidak boleh kosong',
-            'github.required'   => 'Github tidak boleh kosong',
-            'whatsapp.required' => 'Whatsapp tidak boleh kosong',
-            'instagram.required' => 'Instagram tidak boleh kosong',
-            'facebook.required' => 'Facebook tidak boleh kosong'
         ];
     }
 }
