@@ -32,6 +32,16 @@
                         <div class="login-main">
                             <form id="form" class="theme-form" method="post" action="{{ route('login') }}">
                                 @csrf
+                                @if (session('status'))
+                                <div class="col-sm-12 col-lg-12 mb-3 mb-lg-5">
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ session('status') }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                </div>
+                                @endif
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>
@@ -62,7 +72,7 @@
             </div>
         </div>
         <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
-        <script src="{{ asset('assets/js/bootstrap/bootstrap.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
         <script src="{{ asset('assets/js/script.js') }}"></script>
     </div>
 </body>

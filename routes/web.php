@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CompetenciesController;
+use App\Http\Controllers\ConfigsController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -28,5 +30,16 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::prefix('admin')->group(function () {
         Route::get('/', [HomeController::class, 'index']);
+        Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+        Route::prefix('password')->group(function () {
+            Route::get('/', [HomeController::class, 'password']);
+            Route::post('/', [HomeController::class, 'update'])->name('updatePassword');
+        });
+        Route::resource('configs', ConfigsController::class)->only([
+            'index', 'update'
+        ]);
+        Route::resources([
+            'competencies', CompetenciesController::class
+        ]);
     });
 });
