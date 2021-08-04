@@ -14,7 +14,7 @@ class CreateUserDetailsTable extends Migration
     public function up()
     {
         Schema::create('user_details', function (Blueprint $table) {
-            $table->char('id', 30)->primary();
+            $table->id();
             $table->string('name');
             $table->string('photo');
             $table->string('linkedin');
@@ -24,7 +24,6 @@ class CreateUserDetailsTable extends Migration
             $table->string('whatsapp');
             $table->string('instagram');
             $table->string('facebook');
-            $table->char('user_id', 30);
             $table->timestamps();
         });
     }

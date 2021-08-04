@@ -99,7 +99,7 @@
                                     </a>
 
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ asset('admin/updatePassword') }}">
+                                    <a class="dropdown-item" href="{{ asset('admin/password') }}">
                                         <span class="text-truncate pr-2" title="Settings">Update Password</span>
                                     </a>
                                     <a data-toggle="modal" href="" data-target="#logoutModal" class="dropdown-item" >
