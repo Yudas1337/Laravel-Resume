@@ -15,7 +15,7 @@ class ExperiencesController extends Controller
      */
     public function index()
     {
-        $experiences = Experiences::all();
+        $experiences = Experiences::orderBy('id', 'desc')->get();
         return ExperiencesResource::collection($experiences);
     }
 }

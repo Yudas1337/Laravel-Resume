@@ -15,7 +15,7 @@ class EducationsController extends Controller
      */
     public function index()
     {
-        $educations = Educations::all();
+        $educations = Educations::orderBy('id', 'desc')->get();
         return EducationsResource::collection($educations);
     }
 }
