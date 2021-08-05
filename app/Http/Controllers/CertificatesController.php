@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use App\Models\Certificates;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\CertificatesRequest;
 use App\Http\Requests\CertificatesEditRequest;
@@ -78,7 +79,6 @@ class CertificatesController extends Controller
             $certificate->photo = $id['path'];
         }
         $certificate->save();
-
         return redirect('admin/certificates')->with('status', 'Success edit certificate');
     }
 

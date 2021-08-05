@@ -120,7 +120,7 @@
 
     </div>
     <div id="headerDouble" class="d-none">
-    
+
     </div>
     <div id="sidebarMain" class="d-none">
         <aside class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
@@ -128,22 +128,22 @@
                 <div class="navbar-vertical-footer-offset">
                     <div class="navbar-brand-wrapper justify-content-center" style="height: auto;">
                         <!-- Logo -->
-    
-    
+
+
                         <a class="navbar-brand" href="{{ url('admin/') }}" aria-label="Front">
                             <img class="navbar-brand-logo" style="min-width: 3.5rem;max-width: 3.5rem;" src="{{ asset('assets/img/default.jpg')}}" alt="admin">
                             <img class="navbar-brand-logo-mini" src="{{ asset('assets/img/default.jpg')}}" alt="admin">
                         </a>
-    
+
                         <!-- End Logo -->
-    
+
                         <!-- Navbar Vertical Toggle -->
                         <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
                             <i class="tio-clear tio-lg"></i>
                         </button>
                         <!-- End Navbar Vertical Toggle -->
                     </div>
-    
+
                     <!-- Content -->
                     <div class="navbar-vertical-content">
                         <ul class="navbar-nav navbar-nav-lg nav-tabs">
@@ -201,36 +201,36 @@
                         </ul>
                     </div>
                     <!-- End Content -->
-    
-    
+
+
                 </div>
             </div>
         </aside>
     </div>
     <div id="sidebarCompact" class="d-none">
-    
+
     </div>
-    
-    
+
+
     <script src="{{ asset('assets/js/demo.js') }}"></script>
-    
-    
-    
+
+
+
     <!-- End Footer -->
     </main>
-    
+
     <!-- JS Implementing Plugins -->
     <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
-    
+
     <script src="{{ asset('assets/js/select2.min.js') }}"></script>
-    
-    
-    
+
+
+
     <!-- JS Front -->
     <script src="{{ asset('assets/js/theme.min.js') }}"></script>
-    
+
     <!-- JS Plugins Init. -->
-    
+
 
     @yield('konten')
 
@@ -386,7 +386,7 @@
                 }).addTags(settings.whitelist.slice(0, 1));
         });
 
-   
+
         // initialization of datatables
         var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
             dom: 'Bfrtip',

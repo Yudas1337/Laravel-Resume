@@ -19,7 +19,6 @@ class EducationsController extends Controller
         $count      = $educations->count();
         return view('admin.pages.educations.index', compact('educations', 'count'));
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -45,7 +44,8 @@ class EducationsController extends Controller
      */
     public function update(EducationsRequest $request, $id)
     {
-        Educations::find($id)->update($request->all());
+        $request->validated();
+        Educations::findOrFail($id)->update($request->all());
 
         return redirect('admin/educations')->with(
             'status',
