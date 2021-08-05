@@ -25,9 +25,7 @@ class ExperienceRequest extends FormRequest
     {
         return [
             'title'         => 'required',
-            'location'      => 'required',
             'description'   => 'required',
-            'position'      => 'required',
             'date'          => 'required'
         ];
     }
