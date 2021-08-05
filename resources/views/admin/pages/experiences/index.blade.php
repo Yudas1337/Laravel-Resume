@@ -105,7 +105,7 @@
                             <th>Description</th>
                             <th>Position</th>
                             <th>Date</th>
-                            <th>Aksi</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>

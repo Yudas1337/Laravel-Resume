@@ -28,12 +28,4 @@ class EducationsRequest extends FormRequest
             'graduate' => 'required',
         ];
     }
-
-    public function messages()
-    {
-        return [
-            'title.required' => 'title tidak boleh kosong',
-            'graduate.required' => 'graduate tidak boleh kosong',
-        ];
-    }
 }

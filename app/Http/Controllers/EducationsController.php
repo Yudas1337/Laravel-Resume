@@ -15,22 +15,10 @@ class EducationsController extends Controller
      */
     public function index()
     {
-        $data = [
-            'educations' => Educations::all(),
-        ];
-        return view('admin.pages.educations', $data);
+        $educations = Educations::all();
+        $count      = $educations->count();
+        return view('admin.pages.educations.index', compact('educations', 'count'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -39,37 +27,12 @@ class EducationsController extends Controller
      */
     public function store(EducationsRequest $request)
     {
+        $request->validated();
         Educations::create([
-            'title' => $request->title,
+            'title'    => $request->title,
             'graduate' => $request->graduate,
         ]);
-
-        return redirect('admin/educations')->with(
-            'status',
-            'Success add education'
-        );
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return redirect('admin/educations')->with('status', 'Success add education');
     }
 
     /**
@@ -81,7 +44,8 @@ class EducationsController extends Controller
      */
     public function update(EducationsRequest $request, $id)
     {
-        Educations::find($id)->update($request->all());
+        $request->validated();
+        Educations::findOrFail($id)->update($request->all());
 
         return redirect('admin/educations')->with(
             'status',
@@ -97,12 +61,8 @@ class EducationsController extends Controller
      */
     public function destroy($id)
     {
-        echo 'aa';
-        // Educations::find($id)->delete();
-
-        // return redirect('admin/educations')->with(
-        //     'status',
-        //     'Success delete education'
-        // );
+        $educations = Educations::findOrFail($id);
+        $educations->delete();
+        return redirect('admin/educations')->with('status', 'Success delete education');
     }
 }

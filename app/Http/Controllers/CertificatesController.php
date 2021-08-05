@@ -18,21 +18,9 @@ class CertificatesController extends Controller
      */
     public function index()
     {
-        $data = [
-            'certificates' => Certificates::all(),
-        ];
-
-        return view('admin.pages.certificates', $data);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $certificates = Certificates::all();
+        $count        = $certificates->count();
+        return view('admin.pages.certificates.index', compact('certificates', 'count'));
     }
 
     /**
@@ -43,6 +31,7 @@ class CertificatesController extends Controller
      */
     public function store(CertificatesRequest $request)
     {
+        $request->validated();
         if ($request->hasFile('photo')) {
             $foto = $request->file('photo');
             $file = $foto->getContent();
@@ -66,28 +55,6 @@ class CertificatesController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -96,6 +63,7 @@ class CertificatesController extends Controller
      */
     public function update(CertificatesEditRequest $request, $id)
     {
+        $request->validated();
         $certificate = Certificates::findOrFail($id);
         $certificate->title = $request->title;
         $certificate->description = $request->description;
@@ -111,11 +79,7 @@ class CertificatesController extends Controller
             $certificate->photo = $id['path'];
         }
         $certificate->save();
-
-        return redirect('admin/certificates')->with(
-            'status',
-            'Success edit certificate'
-        );
+        return redirect('admin/certificates')->with('status', 'Success edit certificate');
     }
 
     /**
@@ -126,6 +90,9 @@ class CertificatesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $certificates = Certificates::findOrFail($id);
+        Storage::disk('google')->delete($certificates->photo);
+        $certificates->delete();
+        return redirect('admin/certificates')->with('status', 'Success Delete certificate');
     }
 }

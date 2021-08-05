@@ -103,7 +103,7 @@
                             <th>Icon</th>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Aksi</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
