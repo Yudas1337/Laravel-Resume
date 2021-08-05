@@ -15,7 +15,7 @@ class PortfoliosController extends Controller
      */
     public function index()
     {
-        $portfolios = Portfolios::all();
+        $portfolios = Portfolios::orderBy('id', 'desc')->get();
         return PortfoliosResource::collection($portfolios);
     }
 }
