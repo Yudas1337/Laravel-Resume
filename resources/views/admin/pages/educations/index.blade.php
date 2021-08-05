@@ -102,7 +102,7 @@
                                         <i class="tio-search"></i>
                                     </div>
                                 </div>
-                                <input id="datatableSearch" type="search" autocomplete="off" class="form-control" placeholder="Cari Desa">
+                                <input id="datatableSearch" type="search" autocomplete="off" class="form-control" placeholder="Search Educations">
                             </div>
                             <!-- End Search -->
                         </form>
