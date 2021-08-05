@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ExperiencesResource;
-use App\Models\Experiences;
+use App\Http\Resources\PortfoliosResource;
+use App\Models\Portfolios;
 
-class ExperiencesController extends Controller
+class PortfoliosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ExperiencesController extends Controller
      */
     public function index()
     {
-        $experiences = Experiences::all();
-        return ExperiencesResource::collection($experiences);
+        $portfolios = Portfolios::all();
+        return PortfoliosResource::collection($portfolios);
     }
 }
