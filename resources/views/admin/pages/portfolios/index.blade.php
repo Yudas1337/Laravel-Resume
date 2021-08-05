@@ -103,7 +103,7 @@
                             <th>Private</th>
                             <th>Technology</th>
                             <th>Download</th>
-                            <th>Aksi</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
