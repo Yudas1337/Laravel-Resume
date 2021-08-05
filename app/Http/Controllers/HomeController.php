@@ -43,15 +43,15 @@ class HomeController extends Controller
             if (!Hash::check($request->newPass, $user->password)) {
                 $user->password = Hash::make($request->newPass);
                 $user->save();
-                return redirect('admin/password')->with('status', 'Berhasil update password!');
+                return redirect('admin/password')->with('status', 'Successfuly update password');
             } else {
                 return back()->withErrors([
-                    'Password baru tidak boleh sama dengan password lama'
+                    'The new password cannot be the same as the old password'
                 ]);
             }
         } else {
             return back()->withErrors([
-                'Password lama tidak cocok'
+                'Old password does not match'
             ]);
         }
     }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\PortfoliosController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +55,8 @@ Route::group(['middleware' => 'auth'], function () {
             'competencies' => CompetenciesController::class,
             'educations' => EducationsController::class,
             'certificates' => CertificatesController::class,
+            'experiences' => ExperienceController::class,
+            'portfolios' => PortfoliosController::class,
         ]);
     });
 });

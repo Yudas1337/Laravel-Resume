@@ -29,15 +29,4 @@ class PasswordRequest extends FormRequest
             'newPass_confirmation'  => 'required',
         ];
     }
-
-    public function messages()
-    {
-        return [
-            'oldPass.required'                  => 'Password lama tidak boleh kosong',
-            'newPass.required'                  => 'Password baru tidak boleh kosong',
-            'newPass.min'                       => 'Password minimal 6 karakter',
-            'newPass.confirmed'                 => 'Ulangi Password tidak cocok',
-            'newPass_confirmation.required'     => 'Ulangi Password tidak boleh kosong'
-        ];
-    }
 }

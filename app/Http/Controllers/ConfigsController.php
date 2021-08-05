@@ -48,6 +48,6 @@ class ConfigsController extends Controller
             $config->photo = $id['path'];
         }
         $config->save();
-        return redirect('admin/configs')->with('status', 'Berhasil Update Resume Configuration');
+        return redirect('admin/configs')->with('status', 'Update Resume Configuration Succesfuly');
     }
 }

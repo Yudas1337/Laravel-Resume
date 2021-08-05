@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\ConfigsController;
+use App\Http\Controllers\Api\ExperiencesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => ['enablecors', 'verifytoken']], function () {
-    Route::get('experiences', ['']);
+    Route::get('configs', [ConfigsController::class, 'index']);
+    Route::get('experiences', [ExperiencesController::class, 'index']);
 });

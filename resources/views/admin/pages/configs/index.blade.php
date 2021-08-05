@@ -38,7 +38,7 @@
                 @endif
                 @if ($errors->any())
                     <div class="alert alert-danger">
-                        <strong>Gagal!</strong> Validasi Form Error<br><br>
+                        <strong>Failed!</strong> Form Validation Error<br><br>
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
@@ -90,7 +90,7 @@
                     <!-- End Form Group -->
                     <!-- Form Group -->
                     <div class="row form-group">
-                        <label class="col-sm-3 col-form-label input-label">Photo<i class="tio-help-outlined text-body ml-1" data-toggle="tooltip" data-placement="top" title="Photo akan tampil di resume bagian About"></i></label>
+                        <label class="col-sm-3 col-form-label input-label">Photo<i class="tio-help-outlined text-body ml-1" data-toggle="tooltip" data-placement="top" title="Photo will display in about section"></i></label>
 
                         <div class="col-sm-9">
                             <div class="d-flex align-items-center">

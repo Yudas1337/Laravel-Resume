@@ -38,7 +38,7 @@
                         @endif
                         @if ($errors->any())
                             <div class="alert alert-danger">
-                                <strong>Gagal!</strong> Validasi Form Error<br><br>
+                                <strong>Failed!</strong> Form Validation Error<br><br>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -49,7 +49,7 @@
 
                             <!-- Form Group -->
                             <div class="row form-group">
-                                <label for="editUserModalCurrentPasswordLabel" class="col-sm-3 col-form-label input-label">Password Lama</label>
+                                <label for="editUserModalCurrentPasswordLabel" class="col-sm-3 col-form-label input-label">Old Password</label>
 
                                 <div class="col-sm-9">
                                     <div class="input-group input-group-merge">
@@ -70,7 +70,7 @@
 
                             <!-- Form Group -->
                             <div class="row form-group">
-                                <label for="editUserModalCurrentPasswordLabel" class="col-sm-3 col-form-label input-label">Password Baru</label>
+                                <label for="editUserModalCurrentPasswordLabel" class="col-sm-3 col-form-label input-label">New Password</label>
 
                                 <div class="col-sm-9">
                                     <div class="input-group input-group-merge">
@@ -90,7 +90,7 @@
                             </div>
                             <!-- Form Group -->
                             <div class="row form-group">
-                                <label for="editUserModalCurrentPasswordLabel" class="col-sm-3 col-form-label input-label">Ulangi Password</label>
+                                <label for="editUserModalCurrentPasswordLabel" class="col-sm-3 col-form-label input-label">Repeat Password</label>
 
                                 <div class="col-sm-9">
                                     <div class="input-group input-group-merge">

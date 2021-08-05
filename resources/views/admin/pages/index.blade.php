@@ -8,7 +8,7 @@
     <div class="page-header">
         <div class="row align-items-center">
             <div class="col-sm mb-2 mb-sm-0">
-                <h1 class="page-header-title">Halo! Selamat Datang {{ auth()->user()->name }}</h1>
+                <h1 class="page-header-title">Hello! Welcome {{ auth()->user()->name }}</h1>
             </div>
 
         </div>
