@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CompetenciesRequest;
+use App\Models\Competencies;
 use Illuminate\Http\Request;
 
 class CompetenciesController extends Controller
@@ -13,7 +15,9 @@ class CompetenciesController extends Controller
      */
     public function index()
     {
-        //
+        $skills = Competencies::all();
+        $count  = Competencies::count();
+        return view('admin.pages.competencies.index', compact('count', 'skills'));
     }
 
     /**
@@ -23,7 +27,7 @@ class CompetenciesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.competencies.create');
     }
 
     /**
@@ -32,20 +36,15 @@ class CompetenciesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CompetenciesRequest $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $request->validated();
+        Competencies::create([
+            'icon'          => $request->icon,
+            'title'         => $request->title,
+            'description'   => $request->description
+        ]);
+        return redirect('admin/competencies')->with('status', 'Add new Competencies Success');
     }
 
     /**
@@ -56,7 +55,8 @@ class CompetenciesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $skills = Competencies::findOrFail($id);
+        return view('admin.pages.competencies.edit', compact('skills'));
     }
 
     /**
@@ -66,9 +66,15 @@ class CompetenciesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CompetenciesRequest $request, $id)
     {
-        //
+        $request->validated();
+        $skills = Competencies::findOrFail($id);
+        $skills->icon           = $request->icon;
+        $skills->title          = $request->title;
+        $skills->description    = $request->description;
+        $skills->save();
+        return redirect('admin/competencies')->with('status', 'Update Competencies Success');
     }
 
     /**
@@ -79,6 +85,8 @@ class CompetenciesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $skills = Competencies::findOrFail($id);
+        $skills->delete();
+        return redirect('admin/competencies')->with('status', 'Delete Competencies Success');
     }
 }

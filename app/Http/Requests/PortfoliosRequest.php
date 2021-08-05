@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ConfigRequest extends FormRequest
+class PortfoliosRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,12 @@ class ConfigRequest extends FormRequest
     public function rules()
     {
         return [
-            'header'        => 'required',
-            'subheader'     => 'required',
-            'sidebardesc'   => 'required',
-            'headerdesc'    => 'required',
-            'photo'         => 'mimes:jpg,png,jpeg|image',
-            'skilldesc'     => 'required'
+            'title'         => 'required',
+            'description'   => 'required',
+            'photo'         => 'image|mimes:jpg,png,jpeg',
+            'category'      => 'required',
+            'isPrivate'     => 'required',
+            'technology'    => 'required'
         ];
     }
 }

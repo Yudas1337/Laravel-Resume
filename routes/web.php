@@ -3,7 +3,9 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CompetenciesController;
 use App\Http\Controllers\ConfigsController;
+use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PortfoliosController;
 use App\Http\Controllers\UserDetailsController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -39,7 +41,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('configs', ConfigsController::class)->only(['index', 'update']);
         Route::resource('profiles', UserDetailsController::class)->only(['index', 'update']);
         Route::resources([
-            'competencies', CompetenciesController::class
+            'competencies' => CompetenciesController::class,
+            'experiences'  => ExperienceController::class,
+            'portfolios'   => PortfoliosController::class
         ]);
     });
 });

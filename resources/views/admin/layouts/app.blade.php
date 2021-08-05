@@ -86,7 +86,7 @@
                                 </a>
 
                                 <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
-                                    <a class="dropdown-item" href="{{ url('admin/profile') }}">
+                                    <a class="dropdown-item" href="{{ url('admin/profiles') }}">
                                         <div class="media align-items-center">
                                             <div class="avatar avatar-sm avatar-circle mr-2">
                                                 <img class="avatar-img" src="{{ asset('assets/img/default.jpg') }}">
@@ -155,7 +155,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <small class="nav-subtitle" title="Menu Utama">Menu Utama</small>
+                                <small class="nav-subtitle" title="Main Menu">Main Menu</small>
                                 <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                             </li>
                             <li class="nav-item">
@@ -177,7 +177,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ (Request::is('admin/Educations') || Request::is('admin/Educations/*')) ? 'active' : '' }} " href="{{ url('admin/Educations') }}" title="Data Educations">
+                                <a class="nav-link {{ (Request::is('admin/portfolios') || Request::is('admin/portfolios/*')) ? 'active' : '' }} " href="{{ url('admin/portfolios') }}" title="Data Portfolios">
+                                    <i class="tio-document-text nav-icon"></i>
+                                    <span class="text-truncate">Data Portfolios</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ (Request::is('admin/educations') || Request::is('admin/educations/*')) ? 'active' : '' }} " href="{{ url('admin/educations') }}" title="Data Educations">
                                     <i class="tio-document-text nav-icon"></i>
                                     <span class="text-truncate">Data Educations</span>
                                 </a>
