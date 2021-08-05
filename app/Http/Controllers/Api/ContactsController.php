@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\UsersResource;
-use App\Models\UserDetails;
+use App\Http\Resources\ContactsResource;
+use App\Models\Contacts;
 
-class UsersController extends Controller
+class ContactsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = UserDetails::first();
-        return new UsersResource($users);
+        $contacts = Contacts::all();
+        return ContactsResource::collection($contacts);
     }
 }

@@ -90,13 +90,13 @@
                     <!-- End Form Group -->
                     <!-- Form Group -->
                     <div class="row form-group">
-                        <label class="col-sm-3 col-form-label input-label">Photo<i class="tio-help-outlined text-body ml-1" data-toggle="tooltip" data-placement="top" title="Photo will display in about section"></i></label>
+                        <label class="col-sm-3 col-form-label input-label">About Photo<i class="tio-help-outlined text-body ml-1" data-toggle="tooltip" data-placement="top" title="Photo will display in about section"></i></label>
 
                         <div class="col-sm-9">
                             <div class="d-flex align-items-center">
                                 <!-- Avatar -->
                                 <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5" for="avatarUploader">
-                                    <img id="avatarImg" class="avatar-img" src="https://drive.google.com/uc?export=view&id={{ $config->photo }}" alt="{{ auth()->user()->name }}">
+                                    <img id="avatarImg" class="avatar-img" src="https://drive.google.com/uc?export=view&id={{ $config->aboutphoto }}" alt="{{ auth()->user()->name }}">
                                 </label>
                             </div>
                         </div>
@@ -104,10 +104,34 @@
                     <!-- End Form Group -->
                     <!-- Form Group -->
                     <div class="row form-group">
-                        <label for="firstNameLabel" class="col-sm-3 col-form-label input-label">Photo File</label>
+                        <label for="firstNameLabel" class="col-sm-3 col-form-label input-label">About Photo File</label>
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm-down-break">
-                                <input type="file" class="form-control" name="photo">
+                                <input type="file" class="form-control" name="aboutphoto">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Form Group -->
+                    <!-- Form Group -->
+                    <div class="row form-group">
+                        <label class="col-sm-3 col-form-label input-label">Sidebar Photo<i class="tio-help-outlined text-body ml-1" data-toggle="tooltip" data-placement="top" title="Photo will display in Sidebar section"></i></label>
+
+                        <div class="col-sm-9">
+                            <div class="d-flex align-items-center">
+                                <!-- Avatar -->
+                                <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5" for="avatarUploader">
+                                    <img id="avatarImg" class="avatar-img" src="https://drive.google.com/uc?export=view&id={{ $config->sidebarphoto }}" alt="{{ auth()->user()->name }}">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Form Group -->
+                    <!-- Form Group -->
+                    <div class="row form-group">
+                        <label for="firstNameLabel" class="col-sm-3 col-form-label input-label">Sidebar Photo File</label>
+                        <div class="col-sm-9">
+                            <div class="input-group input-group-sm-down-break">
+                                <input type="file" class="form-control" name="sidebarphoto">
                             </div>
                         </div>
                     </div>

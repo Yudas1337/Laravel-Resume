@@ -19,7 +19,8 @@ class CreateConfigsTable extends Migration
             $table->string('subheader');
             $table->text('sidebardesc');
             $table->text('headerdesc');
-            $table->string('photo');
+            $table->string('aboutphoto');
+            $table->string('sidebarphoto');
             $table->text('skilldesc');
             $table->timestamps();
         });
