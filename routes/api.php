@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\Api\CertificatesController;
+use App\Http\Controllers\Api\CompetenciesController;
 use App\Http\Controllers\Api\ConfigsController;
+use App\Http\Controllers\Api\EducationsController;
 use App\Http\Controllers\Api\ExperiencesController;
+use App\Http\Controllers\Api\PortfoliosController;
 use App\Http\Controllers\Api\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +29,8 @@ Route::group(['middleware' => ['enablecors', 'verifytoken']], function () {
     Route::get('configs', [ConfigsController::class, 'index']);
     Route::get('experiences', [ExperiencesController::class, 'index']);
     Route::get('users', [UsersController::class, 'index']);
+    Route::get('portfolios', [PortfoliosController::class, 'index']);
+    Route::get('educations', [EducationsController::class, 'index']);
+    Route::get('certificates', [CertificatesController::class, 'index']);
+    Route::get('competencies', [CompetenciesController::class, 'index']);
 });
