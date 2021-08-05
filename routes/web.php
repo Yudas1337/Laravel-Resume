@@ -9,9 +9,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ConfigsController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\EducationsController;
-use App\Http\Controllers\UserDetailsController;
 use App\Http\Controllers\CertificatesController;
 use App\Http\Controllers\CompetenciesController;
+use App\Http\Controllers\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,16 +47,13 @@ Route::group(['middleware' => 'auth'], function () {
             'index',
             'update',
         ]);
-        Route::resource('profiles', UserDetailsController::class)->only([
-            'index',
-            'update',
-        ]);
         Route::resources([
             'competencies' => CompetenciesController::class,
             'educations' => EducationsController::class,
             'certificates' => CertificatesController::class,
             'experiences' => ExperienceController::class,
             'portfolios' => PortfoliosController::class,
+            'contacts'  => ContactsController::class
         ]);
     });
 });

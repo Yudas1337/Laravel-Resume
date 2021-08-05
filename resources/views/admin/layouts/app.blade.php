@@ -86,7 +86,7 @@
                                 </a>
 
                                 <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
-                                    <a class="dropdown-item" href="{{ url('admin/profiles') }}">
+                                    <a class="dropdown-item">
                                         <div class="media align-items-center">
                                             <div class="avatar avatar-sm avatar-circle mr-2">
                                                 <img class="avatar-img" src="{{ asset('assets/img/default.jpg') }}">
@@ -186,6 +186,12 @@
                                 <a class="nav-link {{ (Request::is('admin/educations') || Request::is('admin/educations/*')) ? 'active' : '' }} " href="{{ url('admin/educations') }}" title="Data Educations">
                                     <i class="tio-document-text nav-icon"></i>
                                     <span class="text-truncate">Data Educations</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ (Request::is('admin/contacts') || Request::is('admin/contacts/*')) ? 'active' : '' }} " href="{{ url('admin/contacts') }}" title="Data Contacts">
+                                    <i class="tio-contact-notebook nav-icon"></i>
+                                    <span class="text-truncate">Data Contacts</span>
                                 </a>
                             </li>
                             <li class="nav-item">

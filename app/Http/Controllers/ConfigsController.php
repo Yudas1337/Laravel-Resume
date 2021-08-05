@@ -36,16 +36,27 @@ class ConfigsController extends Controller
         $config->sidebardesc    = $request->sidebardesc;
         $config->headerdesc     = $request->headerdesc;
         $config->skilldesc      = $request->skilldesc;
-        if ($request->hasFile('photo')) {
-            Storage::disk('google')->delete($config->photo);
-            $foto = $request->file('photo');
+        if ($request->hasFile('aboutphoto')) {
+            Storage::disk('google')->delete($config->aboutphoto);
+            $foto = $request->file('aboutphoto');
             $file = $foto->getContent();
             $filename = $foto->getClientOriginalName();
             $filename = Str::random(16) . $filename;
             Storage::disk('google')->put($filename, $file);
             $listContents = Storage::disk('google')->listContents();
             $id = getDrivePath($listContents, 'name', $filename);
-            $config->photo = $id['path'];
+            $config->aboutphoto = $id['path'];
+        }
+        if ($request->hasFile('sidebarphoto')) {
+            Storage::disk('google')->delete($config->sidebarphoto);
+            $foto = $request->file('sidebarphoto');
+            $file = $foto->getContent();
+            $filename = $foto->getClientOriginalName();
+            $filename = Str::random(16) . $filename;
+            Storage::disk('google')->put($filename, $file);
+            $listContents = Storage::disk('google')->listContents();
+            $id = getDrivePath($listContents, 'name', $filename);
+            $config->sidebarphoto = $id['path'];
         }
         $config->save();
         return redirect('admin/configs')->with('status', 'Update Resume Configuration Succesfuly');
