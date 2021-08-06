@@ -13,38 +13,6 @@
 
         </div>
     </div>
-    <!-- End Page Header -->
-    <!-- Stats -->
-             <div class="row gx-2 gx-lg-3">
-                <div class="col-sm-6 col-lg-3 mb-6 mb-lg-5">
-                <!-- Card -->
-                    <div class="card card-hover-shadow h-100">
-                        <div class="card-body">
-                        <h6 class="card-subtitle">Petugas Aktif</h6>
-
-                            <div class="row align-items-center gx-2 mb-1">
-                                <div class="col-12">
-                                <span class="card-title h2"> 3</span>
-                                </div>
-
-                            </div>
-                        <!-- End Row -->
-
-                        <span class="btn btn-soft-danger">
-                            <i class="tio-group-equal"></i>
-                        </span>
-                    </div>
-                </div>
-                <!-- End Card -->
-            </div>
-        </div>
-        
-        
-    </div>
-    <!-- End Stats -->
-
-
-
 </div>
 <!-- End Content -->
 

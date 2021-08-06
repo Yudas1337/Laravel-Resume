@@ -151,7 +151,7 @@
                                <form id="form-delete" method="POST" action="{{ url('admin/educations/'.$education->id) }}">
                                    @csrf
                                    @method('DELETE')
-                               <a href="" class="btn btn-success p-2 btn-edit" data-toggle="modal" data-target="#ModalEdit" data-title="<?= $education->title ?>" data-graduate="<?= $education->graduate ?>" data-id="<?= $education->id ?>"><i class=" tio-edit"></i>Edit</a>
+                               <a href="" class="btn btn-success p-2 btn-edit" data-toggle="modal" data-target="#ModalEdit" data-title="<?= $education->title ?>" data-graduate="<?= $education->graduate ?>" data-id="<?= $education->id ?>"><i class=" tio-edit"></i> Edit</a>
                                         <button onclick="return confirm('Are you sure want to delete this data?')" class="btn btn-danger p-2 btn-hapus">
                                         <i class="tio-delete"></i> Delete
                                     </button>
