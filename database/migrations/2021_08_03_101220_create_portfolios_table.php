@@ -18,7 +18,7 @@ class CreatePortfoliosTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('photo');
-            $table->enum('category', ['.web', '.mobile', '.design']);
+            $table->enum('category', ['web', 'mobile', 'design']);
             $table->boolean('isPrivate');
             $table->string('technology');
             $table->text('download')->nullable();

@@ -132,8 +132,8 @@
                 <!-- Footer -->
 
                 <div class="card-footer d-flex justify-content-end align-items-center">
-                    <button type="submit" class="btn btn-primary tambahPemohon">
-                        <i class="tio-add-circle"></i> Add Portfolios
+                    <button type="submit" class="btn btn-success">
+                        <i class="tio-edit"></i> Update Portfolios
                     </button>
 
                 </div>

@@ -133,8 +133,7 @@
                                     <a href="{{ $a->download }}" class="badge badge-success">Download</a>
                                 @else
                                     <span class="badge badge-danger">No Link Download Provided</span>
-                                @endif
-                                {{ $a->download }}</td>
+                                @endif</td>
                             <td>
                                 <form method="POST" action="{{ url('admin/portfolios/'.$a->id) }}">
                                     @csrf

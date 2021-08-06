@@ -157,7 +157,7 @@
                             <form method="POST" action="{{ url('admin/certificates/'.$certificate->id) }}">
                                 @csrf
                                 @method('DELETE')
-                               <a href="" class="btn btn-success p-2 btn-edit" data-toggle="modal" data-target="#ModalEdit" data-id="<?= $certificate->id ?>" data-title="<?= $certificate->title ?>" data-description="<?= $certificate->description ?>" data-photo="<?= $certificate->photo ?>"><i class=" tio-edit"></i>Edit</a>
+                               <a href="" class="btn btn-success p-2 btn-edit" data-toggle="modal" data-target="#ModalEdit" data-id="<?= $certificate->id ?>" data-title="<?= $certificate->title ?>" data-description="<?= $certificate->description ?>" data-photo="<?= $certificate->photo ?>"><i class=" tio-edit"></i> Edit</a>
                                     <button onclick="return confirm('Are you sure want to delete this data?')" class="btn btn-danger p-2">
                                         <i class="tio-delete"></i> Delete
                                     </button>
@@ -200,7 +200,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="submit" name="tambah" class="btn btn-success">
-                                <i class="tio-delete"></i>
+                                <i class="tio-edit"></i>
                                 Edit Data</button>
                             <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
                         </div>
