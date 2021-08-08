@@ -36,6 +36,8 @@ class ConfigsController extends Controller
         $config->sidebardesc    = $request->sidebardesc;
         $config->headerdesc     = $request->headerdesc;
         $config->skilldesc      = $request->skilldesc;
+        $config->experiencedesc = $request->experiencedesc;
+        $config->galerydesc     = $request->galerydesc;
         if ($request->hasFile('aboutphoto')) {
             Storage::disk('google')->delete($config->aboutphoto);
             $foto = $request->file('aboutphoto');

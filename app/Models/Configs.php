@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Configs extends Model
 {
     use HasFactory;
+    protected $table = 'configs';
+    protected $primaryKey = 'id';
+    protected $fillable = ['header', 'subheader', 'headerdesc', 'aboutphoto', 'sidebarphoto', 'skilldesc', 'experiencedesc', 'galerydesc'];
 }

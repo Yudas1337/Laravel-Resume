@@ -22,6 +22,8 @@ class CreateConfigsTable extends Migration
             $table->string('aboutphoto');
             $table->string('sidebarphoto');
             $table->text('skilldesc');
+            $table->text('experiencedesc');
+            $table->text('galerydesc');
             $table->timestamps();
         });
     }

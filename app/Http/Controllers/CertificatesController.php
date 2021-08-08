@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use App\Models\Certificates;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\CertificatesRequest;
-use App\Http\Requests\CertificatesEditRequest;
 
 class CertificatesController extends Controller
 {
@@ -46,6 +44,8 @@ class CertificatesController extends Controller
                 'photo' => $id['path'],
                 'description' => $request->description,
             ]);
+        } else {
+            return back()->withErrors('Photo is required');
         }
 
         return redirect('admin/certificates')->with(
@@ -61,7 +61,7 @@ class CertificatesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CertificatesEditRequest $request, $id)
+    public function update(CertificatesRequest $request, $id)
     {
         $request->validated();
         $certificate = Certificates::findOrFail($id);

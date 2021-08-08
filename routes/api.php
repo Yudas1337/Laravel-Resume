@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\ExperiencesController;
 use App\Http\Controllers\Api\PortfoliosController;
 use App\Http\Controllers\Api\UsersController;
 use App\Http\Controllers\Api\ContactsController;
+use App\Http\Controllers\Api\GaleriesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +36,5 @@ Route::group(['middleware' => ['enablecors', 'verifytoken']], function () {
     Route::get('certificates', [CertificatesController::class, 'index']);
     Route::get('competencies', [CompetenciesController::class, 'index']);
     Route::get('contacts', [ContactsController::class, 'index']);
+    Route::get('galeries', [GaleriesController::class, 'index']);
 });
