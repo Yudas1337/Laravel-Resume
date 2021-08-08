@@ -10,5 +10,5 @@ class Galeries extends Model
     use HasFactory;
     protected $table = 'galeries';
     protected $primaryKey = 'id';
-    protected $fillable = ['photo', 'description'];
+    protected $fillable = ['original', 'thumbnail', 'description'];
 }

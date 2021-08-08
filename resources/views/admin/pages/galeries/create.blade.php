@@ -37,10 +37,10 @@
                 @endif
                      <!-- Form Group -->
                      <div class="row form-group">
-                        <label for="photo" class="col-sm-3 col-form-label input-label">Photo File</label>
+                        <label for="original" class="col-sm-3 col-form-label input-label">Photo File</label>
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm-down-break">
-                                <input type="file" class="form-control" name="photo">
+                                <input type="file" class="form-control" name="original">
                             </div>
                         </div>
                     </div>

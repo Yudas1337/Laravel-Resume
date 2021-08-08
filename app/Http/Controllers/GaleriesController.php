@@ -40,10 +40,10 @@ class GaleriesController extends Controller
     public function store(GaleriesRequest $request)
     {
         $request->validated();
-        if (!$request->hasFile('photo')) {
+        if (!$request->hasFile('original')) {
             return back()->withErrors('Photo is Required');
         }
-        $foto = $request->file('photo');
+        $foto = $request->file('original');
         $file = $foto->getContent();
         $filename = $foto->getClientOriginalName();
         $filename = Str::random(16) . $filename;
@@ -51,7 +51,8 @@ class GaleriesController extends Controller
         $listContents = Storage::disk('google')->listContents();
         $id = getDrivePath($listContents, 'name', $filename);
         Galeries::create([
-            'photo'         => $id['path'],
+            'original'      => $id['path'],
+            'thumbnail'     => $id['path'],
             'description'   => $request->description
         ]);
         return redirect('admin/galeries')->with('status', 'Add New Galeries Successfuly');
@@ -81,16 +82,17 @@ class GaleriesController extends Controller
         $request->validated();
         $galeries = Galeries::findOrFail($id);
 
-        if ($request->hasFile('photo')) {
+        if ($request->hasFile('original')) {
             Storage::disk('google')->delete($galeries->photo);
-            $foto = $request->file('photo');
+            $foto = $request->file('original');
             $file = $foto->getContent();
             $filename = $foto->getClientOriginalName();
             $filename = Str::random(16) . $filename;
             Storage::disk('google')->put($filename, $file);
             $listContents = Storage::disk('google')->listContents();
             $id = getDrivePath($listContents, 'name', $filename);
-            $galeries->photo = $id['path'];
+            $galeries->original = $id['path'];
+            $galeries->thumbnail = $id['path'];
         }
         $galeries->description = $request->description;
         $galeries->save();
