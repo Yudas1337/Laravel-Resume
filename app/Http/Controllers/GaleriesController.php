@@ -83,7 +83,7 @@ class GaleriesController extends Controller
         $galeries = Galeries::findOrFail($id);
 
         if ($request->hasFile('original')) {
-            Storage::disk('google')->delete($galeries->photo);
+            Storage::disk('google')->delete($galeries->original);
             $foto = $request->file('original');
             $file = $foto->getContent();
             $filename = $foto->getClientOriginalName();
@@ -108,7 +108,7 @@ class GaleriesController extends Controller
     public function destroy($id)
     {
         $galeries = Galeries::findOrFail($id);
-        Storage::disk('google')->delete($galeries->photo);
+        Storage::disk('google')->delete($galeries->original);
         $galeries->delete();
         return redirect('admin/galeries')->with('status', 'Delete Galeries Successfuly');
     }
