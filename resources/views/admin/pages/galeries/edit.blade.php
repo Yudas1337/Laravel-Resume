@@ -43,7 +43,7 @@
                         <div class="d-flex align-items-center">
                             <!-- Avatar -->
                             <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5" for="avatarUploader">
-                                <img id="avatarImg" class="avatar-img" src="https://drive.google.com/uc?export=view&id={{ $galeries->photo }}" alt="{{ auth()->user()->name }}">
+                                <img id="avatarImg" class="avatar-img" src="https://drive.google.com/uc?export=view&id={{ $galeries->original }}" alt="{{ auth()->user()->name }}">
                             </label>
                         </div>
                     </div>
