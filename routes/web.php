@@ -12,6 +12,7 @@ use App\Http\Controllers\EducationsController;
 use App\Http\Controllers\CertificatesController;
 use App\Http\Controllers\CompetenciesController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\GaleriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +54,8 @@ Route::group(['middleware' => 'auth'], function () {
             'certificates' => CertificatesController::class,
             'experiences' => ExperienceController::class,
             'portfolios' => PortfoliosController::class,
-            'contacts'  => ContactsController::class
+            'contacts'  => ContactsController::class,
+            'galeries'  => GaleriesController::class
         ]);
     });
 });

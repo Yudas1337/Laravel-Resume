@@ -25,17 +25,8 @@ class CertificatesRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'photo' => 'required',
+            'photo' => 'image|mimes:jpg,png,jpeg',
             'description' => 'required',
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'title.required' => 'title tidak boleh kosong',
-            'photo.required' => 'photo tidak boleh kosong',
-            'description.required' => 'description tidak boleh kosong',
         ];
     }
 }

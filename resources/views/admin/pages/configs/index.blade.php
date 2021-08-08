@@ -146,6 +146,26 @@
                         </div>
                     </div>
                     <!-- End Form Group -->
+                     <!-- Form Group -->
+                     <div class="row form-group">
+                        <label for="firstNameLabel" class="col-sm-3 col-form-label input-label">Experience Description</label>
+                        <div class="col-sm-9">
+                            <div class="input-group input-group-sm-down-break">
+                                <textarea class="form-control" name="experiencedesc">{{ $config->experiencedesc }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Form Group -->
+                     <!-- Form Group -->
+                     <div class="row form-group">
+                        <label for="firstNameLabel" class="col-sm-3 col-form-label input-label">Galery Description</label>
+                        <div class="col-sm-9">
+                            <div class="input-group input-group-sm-down-break">
+                                <textarea class="form-control" name="galerydesc">{{ $config->galerydesc }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Form Group -->
                    
                 </div>
                 <!-- End Body -->

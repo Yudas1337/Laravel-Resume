@@ -189,6 +189,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link {{ (Request::is('admin/galeries') || Request::is('admin/galeries/*')) ? 'active' : '' }} " href="{{ url('admin/galeries') }}" title="Data Galeries">
+                                    <i class="tio-photo-gallery nav-icon"></i>
+                                    <span class="text-truncate">Data Galeries</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link {{ (Request::is('admin/contacts') || Request::is('admin/contacts/*')) ? 'active' : '' }} " href="{{ url('admin/contacts') }}" title="Data Contacts">
                                     <i class="tio-contact-notebook nav-icon"></i>
                                     <span class="text-truncate">Data Contacts</span>

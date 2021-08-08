@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CertificatesEditRequest extends FormRequest
+class GaleriesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,8 @@ class CertificatesEditRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'description' => 'required',
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'title.required' => 'title tidak boleh kosong',
-            'description.required' => 'description tidak boleh kosong',
+            'original'      => 'image|mimes:jpg,png,jpeg',
+            'description'   => 'required'
         ];
     }
 }

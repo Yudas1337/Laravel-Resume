@@ -24,12 +24,14 @@ class ConfigRequest extends FormRequest
     public function rules()
     {
         return [
-            'header'        => 'required',
-            'subheader'     => 'required',
-            'sidebardesc'   => 'required',
-            'headerdesc'    => 'required',
-            'photo'         => 'mimes:jpg,png,jpeg|image',
-            'skilldesc'     => 'required'
+            'header'            => 'required',
+            'subheader'         => 'required',
+            'sidebardesc'       => 'required',
+            'headerdesc'        => 'required',
+            'photo'             => 'mimes:jpg,png,jpeg|image',
+            'skilldesc'         => 'required',
+            'experiencedesc'    => 'required',
+            'galerydesc'        => 'required'
         ];
     }
 }
