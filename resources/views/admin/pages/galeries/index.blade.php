@@ -110,7 +110,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>
-                                <img class="avatar-img" src="https://drive.google.com/uc?export=view&id={{ $b->photo }}" alt="{{ $b->photo }}"></td>
+                                <img class="avatar-img" src="https://drive.google.com/uc?export=view&id={{ $b->original }}" alt="{{ $b->original }}"></td>
                             <td>{{ $b->description }}</td>
 
                             <td>
