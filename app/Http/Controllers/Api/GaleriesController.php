@@ -16,9 +16,7 @@ class GaleriesController extends Controller
             array_push($json, [
                 'original'      => "https://drive.google.com/uc?export=view&id=$g->original",
                 'thumbnail'     => "https://drive.google.com/uc?export=view&id=$g->thumbnail",
-                'description'   => $g->description,
-                'originalWidth' => '1000',
-                'originalHeight' => '600'
+                'description'   => $g->description
             ]);
         }
         return GaleriesResource::collection($json);
